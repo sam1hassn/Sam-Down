@@ -26,7 +26,7 @@ class VideoDownloaderApp(MDApp):
         self.screen = MDScreen()
         self.theme_cls.theme_style = "Light"  # اختر Dark لاستخدام الوضع الداكن
         self.theme_cls.primary_palette = "Blue"  # اختر اللون الذي تفضله هنا
-        self.ads = KivMob("ca-app-pub-3940256099942544~3347511713")
+        self.ads1 = KivMob("ca-app-pub-3940256099942544~3347511713")
         
         self.show_banner_ad()
         self.Rewarded_Video()
@@ -276,20 +276,20 @@ class VideoDownloaderApp(MDApp):
             self.url_input.text = clipboard_content
 
     def show_banner_ad(self, *args):
-        
+        self.ads=ads1
         self.ads.new_banner("ca-app-pub-4807505678699119/4029429670", top_pos=False)
         self.ads.request_banner()
         self.ads.show_banner()
         return MDLabel(text='Banner Ad Demo')
 
     def show_interstitial_ad(self, *args):
-        self.ads = KivMob("ca-app-pub-3940256099942544~3347511713")
+        self.ads = ads1
         self.ads.new_interstitial("ca-app-pub-4807505678699119/9407230507")
         self.ads.request_interstitial()
         
 
     def Rewarded_Video(self,*args):
-        self.ads = KivMob("ca-app-pub-3940256099942544~3347511713")
+        self.ads = ads1
         self.ads.load_rewarded_ad("ca-app-pub-4807505678699119/1950632069")
         # Add any callback functionality to this class.
         self.ads.set_rewarded_ad_listener(RewardedListenerInterface())
